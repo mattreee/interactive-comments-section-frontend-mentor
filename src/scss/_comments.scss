@@ -1,0 +1,67 @@
+@use "./index" as *;
+
+.comments {
+	color: $dark-blue;
+	font-family: $ff-rubik;
+
+	margin: 0 auto;
+	width: min(100% - 2rem, 650px);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+
+	&__comment {
+		background-color: $white;
+
+		display: flex;
+		gap: 1rem;
+		padding: 1.5rem;
+
+		&-score {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+
+			&-value {
+				margin: 1rem 0;
+				font-weight: $fw-rubik-bold;
+				font-size: 1.05em;
+			}
+		}
+
+		&-main {
+			width: 100%;
+		}
+
+		&-header {
+			display: flex;
+			align-items: center;
+			gap: 1rem;
+
+			position: relative;
+			margin-bottom: 1rem;
+		}
+
+		&-reply-button {
+			position: absolute;
+			right: 0;
+
+			display: flex;
+			gap: 0.3rem;
+			align-items: center;
+
+			color: $moderate-blue;
+			font-size: 1.05rem;
+			text-decoration: none;
+		}
+
+		&-image {
+			max-width: 2rem;
+		}
+
+		&-username {
+			font-size: 1.1rem;
+			font-weight: $fw-rubik-bold;
+		}
+	}
+}

@@ -1,8 +1,8 @@
 @use "./reset";
 @use "./" as *;
+@use "./comments";
 @use "./credits";
 
 body {
-	background-color: #222;
-	color: white;
+	background-color: $very-light-gray;
 }

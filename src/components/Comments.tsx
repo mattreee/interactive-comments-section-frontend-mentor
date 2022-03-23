@@ -1,39 +1,33 @@
 import { useState, useEffect } from "react";
-
-// interface commentsInterface {
-// 	comments: {
-// 		id: number;
-// 		content: string;
-// 		createdAt: string;
-// 		score: number;
-// 		user: {};
-// 		replies: [];
-// 	}[];
-// }
+import Comment from "./Comment";
+import NewComment from "./NewComment";
 
 const Comments = () => {
 	const [comments, setComments] = useState([]);
 
-	// Load comments once after the page loads
-	useEffect(() => {
-		fetch("https://mattreee-comment-api.herokuapp.com/comments", {
-			headers: {
-				"Content-Type": "application/json",
-				Accept: "application/json",
-			},
-		})
+	const getAllComments = () => {
+		fetch("http://localhost:3333/comments")
 			.then((res) => res.json())
 			.then((data) => setComments(data));
+	};
+
+	// Load comments once after the page loads
+	useEffect(() => {
+		getAllComments();
 	}, []);
 
 	return (
-		<section>
+		<section className="comments">
 			{comments.map((elem: any) => (
-				<div key={String(Math.random())}>
-					<p>{elem.user.username}</p>
-					<p>{elem.content}</p>
-				</div>
+				<Comment
+					key={String(Math.random())}
+					score={elem.score}
+					profileImage={elem.user.image.png}
+					username={elem.user.username}
+					content={elem.content}
+				/>
 			))}
+			<NewComment />
 		</section>
 	);
 };
