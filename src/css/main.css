@@ -1,4 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
@@ -6,11 +11,6 @@
 
 .attribution a {
   color: #3e52a3;
-}
-
-* {
-  box-sizing: border-box;
-  margin: 0;
 }
 
 body {

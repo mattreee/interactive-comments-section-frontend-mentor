@@ -1,10 +1,6 @@
+@use "./reset";
 @use "./" as *;
 @use "./credits";
-
-* {
-	box-sizing: border-box;
-	margin: 0;
-}
 
 body {
 	background-color: #222;
