@@ -4,10 +4,10 @@ import "./css/main.css";
 
 function App() {
 	return (
-		<div role="main">
+		<main>
 			<Comments />
 			<Credits />
-		</div>
+		</main>
 	);
 }
 

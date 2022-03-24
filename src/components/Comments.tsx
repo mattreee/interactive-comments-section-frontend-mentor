@@ -3,6 +3,13 @@ import Comment from "./Comment";
 import NewComment from "./NewComment";
 
 const Comments = () => {
+	const [currentUser, setCurrentUser] = useState({
+		image: {
+			png: "",
+			webp: "",
+		},
+		username: "",
+	});
 	const [comments, setComments] = useState([]);
 
 	const getAllComments = () => {
@@ -11,9 +18,16 @@ const Comments = () => {
 			.then((data) => setComments(data));
 	};
 
+	const getCurrentUser = () => {
+		fetch("http://localhost:3333/currentuser")
+			.then((res) => res.json())
+			.then((data) => setCurrentUser(data));
+	};
+
 	// Load comments once after the page loads
 	useEffect(() => {
 		getAllComments();
+		getCurrentUser();
 	}, []);
 
 	return (
@@ -27,7 +41,7 @@ const Comments = () => {
 					content={elem.content}
 				/>
 			))}
-			<NewComment />
+			<NewComment currentUser={currentUser} />
 		</section>
 	);
 };
