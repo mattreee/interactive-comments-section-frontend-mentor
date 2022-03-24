@@ -1,6 +1,7 @@
 @use "./reset";
 @use "./" as *;
 @use "./comments";
+@use "./newComment";
 @use "./credits";
 
 body {

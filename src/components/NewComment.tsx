@@ -18,17 +18,17 @@ const NewComment = ({ currentUser }: any) => {
 	};
 
 	return (
-		<form onSubmit={handleSubmit}>
-			<img src={currentUser.image.png} alt="" />
-			<input
-				type="text"
+		<form className="new" onSubmit={handleSubmit}>
+			<img className="new__img" src={currentUser.image.png} alt="" />
+			<textarea
+				className="new__input"
 				name="content"
 				placeholder="Add a comment..."
 				required
 				value={textInput}
 				onChange={(e) => setTextInput(e.target.value)}
 			/>
-			<input type="submit" value="SEND" />
+			<input className="new__submit" type="submit" value="SEND" />
 		</form>
 	);
 };

@@ -5,16 +5,18 @@
 	font-family: $ff-rubik;
 
 	margin: 0 auto;
-	width: min(100% - 2rem, 650px);
+	margin-top: 4rem;
+	width: min(100% - 2rem, 700px);
 	display: flex;
 	flex-direction: column;
 	gap: 0.5rem;
 
 	&__comment {
 		background-color: $white;
+		border-radius: 8px;
 
 		display: flex;
-		gap: 1rem;
+		gap: 1.5rem;
 		padding: 1.5rem;
 
 		&-score {
@@ -53,10 +55,19 @@
 			color: $moderate-blue;
 			font-size: 1.05rem;
 			text-decoration: none;
+
+			&:hover {
+				color: $light-grayish-blue;
+
+				img {
+					filter: invert(74%) sepia(37%) saturate(222%) hue-rotate(201deg)
+						brightness(102%) contrast(87%);
+				}
+			}
 		}
 
 		&-image {
-			max-width: 2rem;
+			max-width: 2.2rem;
 		}
 
 		&-username {

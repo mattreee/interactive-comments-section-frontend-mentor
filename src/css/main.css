@@ -7,15 +7,17 @@
   color: #324152;
   font-family: "Rubik", sans-serif;
   margin: 0 auto;
-  width: min(100% - 2rem, 650px);
+  margin-top: 4rem;
+  width: min(100% - 2rem, 700px);
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
 .comments__comment {
   background-color: white;
+  border-radius: 8px;
   display: flex;
-  gap: 1rem;
+  gap: 1.5rem;
   padding: 1.5rem;
 }
 .comments__comment-score {
@@ -48,12 +50,59 @@
   font-size: 1.05rem;
   text-decoration: none;
 }
+.comments__comment-reply-button:hover {
+  color: #c3c4ef;
+}
+.comments__comment-reply-button:hover img {
+  filter: invert(74%) sepia(37%) saturate(222%) hue-rotate(201deg) brightness(102%) contrast(87%);
+}
 .comments__comment-image {
-  max-width: 2rem;
+  max-width: 2.2rem;
 }
 .comments__comment-username {
   font-size: 1.1rem;
   font-weight: 700;
+}
+
+.new {
+  background-color: white;
+  padding: 1.4rem;
+  border-radius: 8px;
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  flex: 1 1 auto;
+}
+.new__img {
+  max-width: 2.5rem;
+}
+.new__input {
+  flex-grow: 1;
+  resize: none;
+  height: 5rem;
+  outline: none;
+  padding: 0.4em 1em;
+  border: 2px solid #f5f6fa;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: "Rubik", sans-serif;
+}
+.new__input:focus {
+  border: 2px solid #67727e;
+}
+.new__submit {
+  background-color: #5457b6;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-family: "Rubik", sans-serif;
+  font-size: 1rem;
+  padding: 0.8em 1.8em;
+}
+.new__submit:hover {
+  cursor: pointer;
+  background-color: #c3c4ef;
 }
 
 .attribution {

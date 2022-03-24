@@ -1,0 +1,51 @@
+@use "./index" as *;
+
+.new {
+	background-color: $white;
+	padding: 1.4rem;
+	border-radius: 8px;
+
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+	flex: 1 1 auto;
+
+	&__img {
+		max-width: 2.5rem;
+	}
+
+	&__input {
+		flex-grow: 1;
+		resize: none;
+		height: 5rem;
+		outline: none;
+
+		padding: 0.4em 1em;
+		border: 2px solid $very-light-gray;
+		border-radius: 8px;
+
+		font-size: 1rem;
+		font-family: $ff-rubik;
+
+		&:focus {
+			border: 2px solid $grayish-blue;
+		}
+	}
+
+	&__submit {
+		background-color: $moderate-blue;
+		color: $white;
+		border: none;
+		border-radius: 8px;
+		outline: none;
+
+		font-family: $ff-rubik;
+		font-size: 1rem;
+		padding: 0.8em 1.8em;
+
+		&:hover {
+			cursor: pointer;
+			background-color: $light-grayish-blue;
+		}
+	}
+}
