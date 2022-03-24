@@ -1,8 +1,14 @@
 import { useEffect } from "react";
 
-const DeleteModal = ({ modalState, setModalState }: any) => {
+const DeleteModal = ({ modalState, setModalState, commentId }: any) => {
 	const closeModal = () => {
 		setModalState(!modalState);
+	};
+
+	const handleSubmit = () => {
+		fetch(`http://localhost:3333/delete/${commentId}`, {
+			method: "delete",
+		});
 	};
 
 	function clickOutsideContainer(e: any) {
@@ -31,7 +37,11 @@ const DeleteModal = ({ modalState, setModalState }: any) => {
 					<button onClick={closeModal} className="deleteModal__button no">
 						NO, CANCEL
 					</button>
-					<button className="deleteModal__button yes">YES, DELETE</button>
+					<form onSubmit={handleSubmit}>
+						<button type="submit" className="deleteModal__button yes">
+							YES, DELETE
+						</button>
+					</form>
 				</div>
 			</div>
 		</section>

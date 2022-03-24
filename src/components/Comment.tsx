@@ -11,6 +11,7 @@ const Comment = ({
 	username,
 	content,
 	currentUser,
+	commentId,
 }: any) => {
 	const [deleteOpen, setDeleteOpen] = useState(false);
 
@@ -44,6 +45,7 @@ const Comment = ({
 						<DeleteModal
 							modalState={deleteOpen}
 							setModalState={setDeleteOpen}
+							commentId={commentId}
 						/>
 					)}
 

@@ -40,6 +40,7 @@ const Comments = () => {
 					username={elem.user.username}
 					content={elem.content}
 					currentUser={currentUser}
+					commentId={elem.id}
 				/>
 			))}
 			<NewComment currentUser={currentUser} />
