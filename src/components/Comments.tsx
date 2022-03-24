@@ -39,6 +39,7 @@ const Comments = () => {
 					profileImage={elem.user.image.png}
 					username={elem.user.username}
 					content={elem.content}
+					currentUser={currentUser}
 				/>
 			))}
 			<NewComment currentUser={currentUser} />

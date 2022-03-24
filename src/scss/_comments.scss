@@ -74,5 +74,68 @@
 			font-size: 1.1rem;
 			font-weight: $fw-rubik-bold;
 		}
+
+		&-you {
+			font-size: 0.8rem;
+			background-color: $moderate-blue;
+			color: $white;
+			padding: 0.15em 0.4em;
+			border-radius: 3px;
+		}
+
+		&-user-options {
+			display: flex;
+			align-items: center;
+			gap: 2rem;
+
+			position: absolute;
+			right: 0;
+
+			.delete-button {
+				font-family: $ff-rubik;
+				font-size: 1rem;
+				font-weight: $fw-rubik-medium;
+
+				background-color: $white;
+				border: none;
+				color: $soft-red;
+
+				&::before {
+					position: absolute;
+					content: url("../images/icon-delete.svg");
+					margin-left: -1.4rem;
+				}
+
+				&:hover {
+					cursor: pointer;
+					// color: $pale-red;
+
+					opacity: 0.6;
+				}
+			}
+
+			.edit-button {
+				font-family: $ff-rubik;
+				font-size: 1rem;
+				font-weight: $fw-rubik-medium;
+
+				background-color: $white;
+				border: none;
+				color: $moderate-blue;
+
+				&::before {
+					position: absolute;
+					content: url("../images/icon-edit.svg");
+					margin-left: -1.4rem;
+				}
+
+				&:hover {
+					cursor: pointer;
+					// color: $light-grayish-blue;
+
+					opacity: 0.6;
+				}
+			}
+		}
 	}
 }

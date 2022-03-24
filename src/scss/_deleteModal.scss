@@ -1,0 +1,75 @@
+@use "./index" as *;
+
+.deleteModal {
+	position: fixed;
+	background-color: rgba(black, 0.55);
+
+	min-width: 100vw;
+	min-height: 100vh;
+	left: 0;
+	top: 0;
+	z-index: 2;
+
+	display: grid;
+	place-items: center;
+
+	font-size: 1.2rem;
+
+	&__container {
+		background-color: $white;
+		max-width: 40ch;
+		padding: 1.7em 1.5em;
+		border-radius: 10px;
+
+		display: flex;
+		flex-direction: column;
+		gap: 1.5rem;
+	}
+
+	&__title {
+		font-weight: $fw-rubik-medium;
+		font-size: 1.6rem;
+	}
+
+	&__desc {
+		max-width: 33ch;
+		font-size: 1.1rem;
+		line-height: 1.4;
+	}
+
+	&__button-container {
+		display: flex;
+		gap: 1rem;
+		margin: 0 auto;
+	}
+
+	&__button {
+		font-family: $ff-rubik;
+		font-size: 1.2rem;
+		font-weight: $fw-rubik-medium;
+
+		color: $white;
+		border: none;
+		outline: none;
+		padding: 0.8em 2em;
+		border-radius: 10px;
+	}
+
+	.yes {
+		background-color: $soft-red;
+
+		&:hover {
+			background-color: darken($soft-red, 10);
+			cursor: pointer;
+		}
+	}
+
+	.no {
+		background-color: $grayish-blue;
+
+		&:hover {
+			background-color: darken($grayish-blue, 10);
+			cursor: pointer;
+		}
+	}
+}

@@ -2,6 +2,7 @@
 @use "./" as *;
 @use "./comments";
 @use "./newComment";
+@use "./deleteModal";
 @use "./credits";
 
 body {
