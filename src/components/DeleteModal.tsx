@@ -1,11 +1,23 @@
 import { useEffect } from "react";
 
-const DeleteModal = ({ modalState, setModalState, commentId }: any) => {
+const DeleteModal = ({
+	modalState,
+	setModalState,
+	commentId,
+	parentId,
+}: any) => {
 	const closeModal = () => {
 		setModalState(!modalState);
 	};
 
 	const handleSubmit = () => {
+		if (parentId !== null) {
+			fetch(`http://localhost:3333/deletereply/${parentId}/${commentId}`, {
+				method: "delete",
+			});
+			return;
+		}
+
 		fetch(`http://localhost:3333/delete/${commentId}`, {
 			method: "delete",
 		});

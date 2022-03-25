@@ -92,6 +92,7 @@ const Comment = ({
 						deleteState={deleteOpen}
 						setDeleteState={setDeleteOpen}
 						openDeleteModal={openDeleteModal}
+						parentId={commentId}
 					/>
 				))}
 			</div>

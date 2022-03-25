@@ -14,6 +14,7 @@ const Reply = ({
 	deleteState,
 	setDeleteState,
 	openDeleteModal,
+	parentId,
 }: any) => {
 	return (
 		<div className="reply">
@@ -63,6 +64,7 @@ const Reply = ({
 						modalState={deleteState}
 						setModalState={setDeleteState}
 						commentId={id}
+						parentId={parentId}
 					/>
 				)}
 			</div>
