@@ -144,5 +144,15 @@
 				}
 			}
 		}
+
+		&-update-form {
+			display: flex;
+			flex-direction: column;
+			gap: 0.5rem;
+
+			.new__submit {
+				align-self: flex-end;
+			}
+		}
 	}
 }

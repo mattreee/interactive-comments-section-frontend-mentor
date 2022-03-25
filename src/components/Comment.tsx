@@ -17,6 +17,12 @@ const Comment = ({
 }: any) => {
 	const [deleteOpen, setDeleteOpen] = useState(false);
 	const [replyOpen, setReplyOpen] = useState(false);
+	const [displayEdit, setDisplayEdit] = useState(false);
+	const [textInput, setTextInput] = useState("");
+
+	const openEdit = () => {
+		setDisplayEdit(!displayEdit);
+	};
 
 	const openDeleteModal = () => {
 		setDeleteOpen(!deleteOpen);
@@ -24,6 +30,18 @@ const Comment = ({
 
 	const openReplyBox = () => {
 		setReplyOpen(!replyOpen);
+	};
+
+	const updateContent = {
+		content: textInput,
+	};
+
+	const handleSubmit = () => {
+		fetch(`http://localhost:3333/updatecomment/${commentId}`, {
+			method: "put",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(updateContent),
+		});
 	};
 
 	return (
@@ -70,7 +88,9 @@ const Comment = ({
 								<button onClick={openDeleteModal} className="delete-button">
 									Delete
 								</button>
-								<button className="edit-button">Edit</button>
+								<button className="edit-button" onClick={openEdit}>
+									{!displayEdit ? "Edit" : "Close"}
+								</button>
 							</div>
 						) : (
 							<button
@@ -81,7 +101,21 @@ const Comment = ({
 							</button>
 						)}
 					</div>
-					<p className="comments__comment-content">{content}</p>
+
+					{!displayEdit ? (
+						<p className="comments__comment-content">{content}</p>
+					) : (
+						<form
+							className="comments__comment-update-form"
+							onSubmit={handleSubmit}
+						>
+							<textarea
+								className="new__input"
+								onChange={(e) => setTextInput(e.target.value)}
+							></textarea>
+							<button className="new__submit">UPDATE</button>
+						</form>
+					)}
 				</div>
 			</div>
 

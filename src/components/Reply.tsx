@@ -1,6 +1,7 @@
 import IconPlus from "../images/icon-plus.svg";
 import IconMinus from "../images/icon-minus.svg";
 import DeleteModal from "./DeleteModal";
+import { useState } from "react";
 
 const Reply = ({
 	id,
@@ -16,6 +17,25 @@ const Reply = ({
 	parentId,
 	parentUsername,
 }: any) => {
+	const [displayEdit, setDisplayEdit] = useState(false);
+	const [textInput, setTextInput] = useState("");
+
+	const openEdit = () => {
+		setDisplayEdit(!displayEdit);
+	};
+
+	const updateContent = {
+		content: textInput,
+	};
+
+	const handleSubmit = () => {
+		fetch(`http://localhost:3333/updatereply/${parentId}/${id}`, {
+			method: "put",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(updateContent),
+		});
+	};
+
 	return (
 		<div className="reply">
 			<div className="comments__comment-score">
@@ -45,18 +65,35 @@ const Reply = ({
 							<button onClick={openDeleteModal} className="delete-button">
 								Delete
 							</button>
-							<button className="edit-button">Edit</button>
+							<button className="edit-button" onClick={openEdit}>
+								{!displayEdit ? "Edit" : "Close"}
+							</button>
 						</div>
 					) : (
 						<button className="comments__comment-reply-button">Reply</button>
 					)}
 				</div>
-				<p>
-					<span className="span-replying-to">
-						{replyingTo || parentUsername}
-					</span>{" "}
-					{content}
-				</p>
+
+				{!displayEdit ? (
+					<p>
+						<span className="span-replying-to">
+							{replyingTo || parentUsername}
+						</span>{" "}
+						{content}
+					</p>
+				) : (
+					<form
+						className="comments__comment-update-form"
+						onSubmit={handleSubmit}
+					>
+						<textarea
+							className="new__input"
+							onChange={(e) => setTextInput(e.target.value)}
+						></textarea>
+						<button className="new__submit">UPDATE</button>
+					</form>
+				)}
+
 				{deleteState && (
 					<DeleteModal
 						modalState={deleteState}

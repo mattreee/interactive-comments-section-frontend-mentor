@@ -119,6 +119,14 @@
   cursor: pointer;
   opacity: 0.6;
 }
+.comments__comment-update-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+.comments__comment-update-form .new__submit {
+  align-self: flex-end;
+}
 
 .new {
   background-color: white;
