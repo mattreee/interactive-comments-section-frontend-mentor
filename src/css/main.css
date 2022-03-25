@@ -213,6 +213,18 @@
   cursor: pointer;
 }
 
+.reply {
+  background-color: white;
+  margin: 1rem;
+  width: 85%;
+  margin-left: auto;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+}
+
 .attribution {
   font-size: 11px;
   text-align: center;
