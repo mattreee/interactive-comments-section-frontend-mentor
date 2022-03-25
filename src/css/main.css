@@ -127,6 +127,10 @@
 .comments__comment-update-form .new__submit {
   align-self: flex-end;
 }
+.comments__reply-container {
+  border-left: 4px solid #eaecf1;
+  margin-left: 3rem;
+}
 
 .new {
   background-color: white;
@@ -242,7 +246,7 @@
 .reply {
   background-color: white;
   margin: 1rem;
-  width: 85%;
+  width: 92%;
   margin-left: auto;
   padding: 1.5rem;
   border-radius: 10px;

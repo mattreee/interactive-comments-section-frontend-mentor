@@ -121,23 +121,25 @@ const Comment = ({
 
 			{replyOpen && <ReplyBox currentUser={currentUser} parentId={commentId} />}
 
-			{replies.map((elem: any) => (
-				<Reply
-					key={String(Math.random())}
-					id={elem.id}
-					content={elem.content}
-					createdAt={elem.createdAt}
-					score={elem.score}
-					user={elem.user}
-					replyingTo={elem.replyingTo}
-					currentUser={currentUser}
-					deleteState={deleteOpen}
-					setDeleteState={setDeleteOpen}
-					openDeleteModal={openDeleteModal}
-					parentId={commentId}
-					parentUsername={username}
-				/>
-			))}
+			<div className="comments__reply-container">
+				{replies.map((elem: any) => (
+					<Reply
+						key={String(Math.random())}
+						id={elem.id}
+						content={elem.content}
+						createdAt={elem.createdAt}
+						score={elem.score}
+						user={elem.user}
+						replyingTo={elem.replyingTo}
+						currentUser={currentUser}
+						deleteState={deleteOpen}
+						setDeleteState={setDeleteOpen}
+						openDeleteModal={openDeleteModal}
+						parentId={commentId}
+						parentUsername={username}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };

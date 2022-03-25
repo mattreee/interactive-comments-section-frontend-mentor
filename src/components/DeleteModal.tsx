@@ -11,7 +11,7 @@ const DeleteModal = ({
 	};
 
 	const handleSubmit = () => {
-		if (parentId !== null) {
+		if (parentId !== undefined) {
 			fetch(`http://localhost:3333/deletereply/${parentId}/${commentId}`, {
 				method: "delete",
 			});

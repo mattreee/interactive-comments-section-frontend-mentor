@@ -155,4 +155,9 @@
 			}
 		}
 	}
+
+	&__reply-container {
+		border-left: 4px solid $light-gray;
+		margin-left: 3rem;
+	}
 }
