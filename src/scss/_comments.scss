@@ -53,16 +53,23 @@
 			align-items: center;
 
 			color: $moderate-blue;
-			font-size: 1.05rem;
+			font-family: $ff-rubik;
+			font-size: 1rem;
+			font-weight: $fw-rubik-medium;
 			text-decoration: none;
+			background-color: $white;
+			outline: none;
+			border: none;
+
+			&::before {
+				position: absolute;
+				content: url("../images/icon-reply.svg");
+				margin-left: -1.4rem;
+			}
 
 			&:hover {
-				color: $light-grayish-blue;
-
-				img {
-					filter: invert(74%) sepia(37%) saturate(222%) hue-rotate(201deg)
-						brightness(102%) contrast(87%);
-				}
+				cursor: pointer;
+				opacity: 0.6;
 			}
 		}
 

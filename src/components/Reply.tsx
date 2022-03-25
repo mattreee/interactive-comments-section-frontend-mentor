@@ -1,6 +1,5 @@
 import IconPlus from "../images/icon-plus.svg";
 import IconMinus from "../images/icon-minus.svg";
-import IconReply from "../images/icon-reply.svg";
 import DeleteModal from "./DeleteModal";
 
 const Reply = ({
@@ -15,6 +14,7 @@ const Reply = ({
 	setDeleteState,
 	openDeleteModal,
 	parentId,
+	parentUsername,
 }: any) => {
 	return (
 		<div className="reply">
@@ -48,15 +48,13 @@ const Reply = ({
 							<button className="edit-button">Edit</button>
 						</div>
 					) : (
-						// eslint-disable-next-line jsx-a11y/anchor-is-valid
-						<a href="#" className="comments__comment-reply-button">
-							<img src={IconReply} alt="" />
-							Reply
-						</a>
+						<button className="comments__comment-reply-button">Reply</button>
 					)}
 				</div>
 				<p>
-					{replyingTo}
+					<span className="span-replying-to">
+						{replyingTo || parentUsername}
+					</span>{" "}
 					{content}
 				</p>
 				{deleteState && (

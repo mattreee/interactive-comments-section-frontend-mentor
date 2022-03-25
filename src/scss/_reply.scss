@@ -6,10 +6,22 @@
 	width: 85%;
 	margin-left: auto;
 	padding: 1.5rem;
+	border-radius: 10px;
 
 	display: flex;
 	align-items: center;
 	gap: 1.5rem;
 
 	position: relative;
+
+	.span-replying-to {
+		font-weight: $fw-rubik-bold;
+		color: $moderate-blue;
+		cursor: pointer;
+
+		&::before {
+			display: inline-block;
+			content: "@";
+		}
+	}
 }

@@ -1,0 +1,12 @@
+@use "./index" as *;
+
+.reply-box {
+	background-color: $white;
+	padding: 1.4rem;
+	border-radius: 8px;
+
+	margin-top: 0.5rem;
+	display: flex;
+	align-items: flex-start;
+	gap: 1rem;
+}

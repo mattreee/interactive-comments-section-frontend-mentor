@@ -1,10 +1,9 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import { useState } from "react";
 import IconPlus from "../images/icon-plus.svg";
 import IconMinus from "../images/icon-minus.svg";
-import IconReply from "../images/icon-reply.svg";
 import DeleteModal from "./DeleteModal";
 import Reply from "./Reply";
+import ReplyBox from "./ReplyBox";
 
 const Comment = ({
 	score,
@@ -17,9 +16,14 @@ const Comment = ({
 	replies,
 }: any) => {
 	const [deleteOpen, setDeleteOpen] = useState(false);
+	const [replyOpen, setReplyOpen] = useState(false);
 
 	const openDeleteModal = () => {
 		setDeleteOpen(!deleteOpen);
+	};
+
+	const openReplyBox = () => {
+		setReplyOpen(!replyOpen);
 	};
 
 	return (
@@ -69,33 +73,37 @@ const Comment = ({
 								<button className="edit-button">Edit</button>
 							</div>
 						) : (
-							<a href="#" className="comments__comment-reply-button">
-								<img src={IconReply} alt="" />
+							<button
+								className="comments__comment-reply-button"
+								onClick={openReplyBox}
+							>
 								Reply
-							</a>
+							</button>
 						)}
 					</div>
 					<p className="comments__comment-content">{content}</p>
 				</div>
 			</div>
-			<div>
-				{replies.map((elem: any) => (
-					<Reply
-						key={String(Math.random())}
-						id={elem.id}
-						content={elem.content}
-						createdAt={elem.createdAt}
-						score={elem.score}
-						user={elem.user}
-						replyingTo={elem.replyingTo}
-						currentUser={currentUser}
-						deleteState={deleteOpen}
-						setDeleteState={setDeleteOpen}
-						openDeleteModal={openDeleteModal}
-						parentId={commentId}
-					/>
-				))}
-			</div>
+
+			{replyOpen && <ReplyBox currentUser={currentUser} parentId={commentId} />}
+
+			{replies.map((elem: any) => (
+				<Reply
+					key={String(Math.random())}
+					id={elem.id}
+					content={elem.content}
+					createdAt={elem.createdAt}
+					score={elem.score}
+					user={elem.user}
+					replyingTo={elem.replyingTo}
+					currentUser={currentUser}
+					deleteState={deleteOpen}
+					setDeleteState={setDeleteOpen}
+					openDeleteModal={openDeleteModal}
+					parentId={commentId}
+					parentUsername={username}
+				/>
+			))}
 		</div>
 	);
 };
