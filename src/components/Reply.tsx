@@ -59,20 +59,20 @@ const Reply = ({
 						<p className="comments__comment-you">you</p>
 					)}
 					<p className="comments__comment-time-ago">{createdAt}</p>
-
-					{user.username === currentUser.username ? (
-						<div className="comments__comment-user-options">
-							<button onClick={openDeleteModal} className="delete-button">
-								Delete
-							</button>
-							<button className="edit-button" onClick={openEdit}>
-								{!displayEdit ? "Edit" : "Close"}
-							</button>
-						</div>
-					) : (
-						<button className="comments__comment-reply-button">Reply</button>
-					)}
 				</div>
+
+				{user.username === currentUser.username ? (
+					<div className="comments__comment-user-options">
+						<button onClick={openDeleteModal} className="delete-button">
+							Delete
+						</button>
+						<button className="edit-button" onClick={openEdit}>
+							{!displayEdit ? "Edit" : "Close"}
+						</button>
+					</div>
+				) : (
+					<button className="comments__comment-reply-button">Reply</button>
+				)}
 
 				{!displayEdit ? (
 					<p>
@@ -89,6 +89,7 @@ const Reply = ({
 						<textarea
 							className="new__input"
 							onChange={(e) => setTextInput(e.target.value)}
+							placeholder="Edit your comment..."
 						></textarea>
 						<button className="new__submit">UPDATE</button>
 					</form>

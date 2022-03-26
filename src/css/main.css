@@ -19,6 +19,7 @@
   display: flex;
   gap: 1.5rem;
   padding: 1.5rem;
+  position: relative;
 }
 .comments__comment-score {
   display: flex;
@@ -42,7 +43,8 @@
 }
 .comments__comment-reply-button {
   position: absolute;
-  right: 0;
+  top: 1.5rem;
+  right: 1rem;
   display: flex;
   gap: 0.3rem;
   align-items: center;
@@ -84,6 +86,7 @@
   gap: 2rem;
   position: absolute;
   right: 0;
+  top: 2rem;
 }
 .comments__comment-user-options .delete-button {
   font-family: "Rubik", sans-serif;
@@ -129,9 +132,33 @@
 }
 .comments__reply-container {
   border-left: 4px solid #eaecf1;
-  margin-left: 3rem;
+  margin-left: 2rem;
 }
 
+@media only screen and (max-width: 700px) {
+  .comments__comment {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .comments__comment-score {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .comments__comment-reply-button {
+    position: absolute;
+    top: auto;
+    bottom: 2.5rem;
+  }
+  .comments__comment-user-options {
+    top: auto;
+    bottom: 2.5rem;
+  }
+  .comments__reply-container {
+    margin: 0;
+    border: none;
+  }
+}
 .new {
   background-color: white;
   padding: 1.4rem;
@@ -139,7 +166,6 @@
   display: flex;
   align-items: flex-start;
   gap: 1rem;
-  flex: 1 1 auto;
 }
 .new__img {
   max-width: 2.5rem;
@@ -173,6 +199,21 @@
   background-color: #c3c4ef;
 }
 
+@media only screen and (max-width: 700px) {
+  .new {
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .new__img {
+    order: 2;
+  }
+  .new__input {
+    flex-basis: 100%;
+  }
+  .new__submit {
+    order: 3;
+  }
+}
 .deleteModal {
   position: fixed;
   background-color: rgba(0, 0, 0, 0.55);
@@ -246,8 +287,8 @@
 .reply {
   background-color: white;
   margin: 1rem;
-  width: 92%;
-  margin-left: auto;
+  width: 95%;
+  margin-left: 2rem;
   padding: 1.5rem;
   border-radius: 10px;
   display: flex;
@@ -265,6 +306,19 @@
   content: "@";
 }
 
+@media only screen and (max-width: 700px) {
+  .reply {
+    margin: 1rem;
+    width: auto;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: stretch;
+  }
+  .reply .comments__comment-user-options {
+    top: auto;
+    bottom: 2.5rem;
+  }
+}
 .attribution {
   font-size: 11px;
   text-align: center;

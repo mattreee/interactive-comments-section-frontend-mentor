@@ -3,8 +3,8 @@
 .reply {
 	background-color: $white;
 	margin: 1rem;
-	width: 92%;
-	margin-left: auto;
+	width: 95%;
+	margin-left: 2rem;
 	padding: 1.5rem;
 	border-radius: 10px;
 
@@ -22,6 +22,22 @@
 		&::before {
 			display: inline-block;
 			content: "@";
+		}
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.reply {
+		margin: 1rem;
+		width: auto;
+
+		display: flex;
+		flex-direction: column-reverse;
+		align-items: stretch;
+
+		.comments__comment-user-options {
+			top: auto;
+			bottom: 2.5rem;
 		}
 	}
 }

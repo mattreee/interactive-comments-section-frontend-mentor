@@ -82,25 +82,25 @@ const Comment = ({
 								commentId={commentId}
 							/>
 						)}
-
-						{username === currentUser.username ? (
-							<div className="comments__comment-user-options">
-								<button onClick={openDeleteModal} className="delete-button">
-									Delete
-								</button>
-								<button className="edit-button" onClick={openEdit}>
-									{!displayEdit ? "Edit" : "Close"}
-								</button>
-							</div>
-						) : (
-							<button
-								className="comments__comment-reply-button"
-								onClick={openReplyBox}
-							>
-								Reply
-							</button>
-						)}
 					</div>
+
+					{username === currentUser.username ? (
+						<div className="comments__comment-user-options">
+							<button onClick={openDeleteModal} className="delete-button">
+								Delete
+							</button>
+							<button className="edit-button" onClick={openEdit}>
+								{!displayEdit ? "Edit" : "Close"}
+							</button>
+						</div>
+					) : (
+						<button
+							className="comments__comment-reply-button"
+							onClick={openReplyBox}
+						>
+							Reply
+						</button>
+					)}
 
 					{!displayEdit ? (
 						<p className="comments__comment-content">{content}</p>
@@ -111,6 +111,7 @@ const Comment = ({
 						>
 							<textarea
 								className="new__input"
+								placeholder="Edit your comment..."
 								onChange={(e) => setTextInput(e.target.value)}
 							></textarea>
 							<button className="new__submit">UPDATE</button>

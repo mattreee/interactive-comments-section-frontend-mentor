@@ -19,6 +19,8 @@
 		gap: 1.5rem;
 		padding: 1.5rem;
 
+		position: relative;
+
 		&-score {
 			display: flex;
 			flex-direction: column;
@@ -46,7 +48,8 @@
 
 		&-reply-button {
 			position: absolute;
-			right: 0;
+			top: 1.5rem;
+			right: 1rem;
 
 			display: flex;
 			gap: 0.3rem;
@@ -97,6 +100,7 @@
 
 			position: absolute;
 			right: 0;
+			top: 2rem;
 
 			.delete-button {
 				font-family: $ff-rubik;
@@ -158,6 +162,37 @@
 
 	&__reply-container {
 		border-left: 4px solid $light-gray;
-		margin-left: 3rem;
+		margin-left: 2rem;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.comments {
+		&__comment {
+			display: flex;
+			flex-direction: column-reverse;
+
+			&-score {
+				display: flex;
+				flex-direction: row;
+				gap: 1rem;
+			}
+
+			&-reply-button {
+				position: absolute;
+				top: auto;
+				bottom: 2.5rem;
+			}
+
+			&-user-options {
+				top: auto;
+				bottom: 2.5rem;
+			}
+		}
+
+		&__reply-container {
+			margin: 0;
+			border: none;
+		}
 	}
 }
