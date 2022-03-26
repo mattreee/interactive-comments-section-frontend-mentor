@@ -15,7 +15,7 @@ const Score = ({ score, parentId, commentId }: any) => {
 	const handleScorePlus = () => {
 		if (parentId !== undefined) {
 			fetch(
-				`https://mattreee-comment-api.herokuapp.com/scorereply/${parentId}/${commentId}`,
+				`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/scorereply/${parentId}/${commentId}`,
 				{
 					method: "put",
 					headers: { "Content-Type": "application/json" },
@@ -24,17 +24,20 @@ const Score = ({ score, parentId, commentId }: any) => {
 			);
 		}
 
-		fetch(`https://mattreee-comment-api.herokuapp.com/score/${commentId}`, {
-			method: "put",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(scoreState.plus),
-		});
+		fetch(
+			`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/score/${commentId}`,
+			{
+				method: "put",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(scoreState.plus),
+			}
+		);
 	};
 
 	const handleScoreMinus = () => {
 		if (parentId !== undefined) {
 			fetch(
-				`https://mattreee-comment-api.herokuapp.com/scorereply/${parentId}/${commentId}`,
+				`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/scorereply/${parentId}/${commentId}`,
 				{
 					method: "put",
 					headers: { "Content-Type": "application/json" },
@@ -43,11 +46,14 @@ const Score = ({ score, parentId, commentId }: any) => {
 			);
 		}
 
-		fetch(`https://mattreee-comment-api.herokuapp.com/score/${commentId}`, {
-			method: "put",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(scoreState.minus),
-		});
+		fetch(
+			`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/score/${commentId}`,
+			{
+				method: "put",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(scoreState.minus),
+			}
+		);
 	};
 
 	return (

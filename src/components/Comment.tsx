@@ -37,7 +37,7 @@ const Comment = ({
 
 	const handleSubmit = () => {
 		fetch(
-			`https://mattreee-comment-api.herokuapp.com/updatecomment/${commentId}`,
+			`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/updatecomment/${commentId}`,
 			{
 				method: "put",
 				headers: { "Content-Type": "application/json" },
