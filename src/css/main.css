@@ -31,6 +31,13 @@
   font-weight: 700;
   font-size: 1.05em;
 }
+.comments__comment-score-button {
+  cursor: pointer;
+  padding: 0.5rem;
+}
+.comments__comment-score input {
+  display: none;
+}
 .comments__comment-main {
   width: 100%;
 }

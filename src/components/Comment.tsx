@@ -1,6 +1,7 @@
 import { useState } from "react";
-import IconPlus from "../images/icon-plus.svg";
-import IconMinus from "../images/icon-minus.svg";
+// import IconPlus from "../images/icon-plus.svg";
+// import IconMinus from "../images/icon-minus.svg";
+import Score from "./Score";
 import DeleteModal from "./DeleteModal";
 import Reply from "./Reply";
 import ReplyBox from "./ReplyBox";
@@ -43,23 +44,15 @@ const Comment = ({
 			body: JSON.stringify(updateContent),
 		});
 	};
+	// make the handlesubmit for the plus and minus buttons;
+	// until now its only in the plus button right below
+	// make the same for the replies
 
 	return (
 		<div className="comments__container">
 			<div className="comments__comment">
-				<div className="comments__comment-score">
-					<img
-						className="comments__comment-score-button"
-						src={IconPlus}
-						alt=""
-					/>
-					<p className="comments__comment-score-value">{score}</p>
-					<img
-						className="comments__comment-score-button"
-						src={IconMinus}
-						alt=""
-					/>
-				</div>
+				<Score score={score} commentId={commentId} />
+
 				<div className="comments__comment-main">
 					<div className="comments__comment-header">
 						<img

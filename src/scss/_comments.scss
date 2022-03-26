@@ -31,6 +31,15 @@
 				font-weight: $fw-rubik-bold;
 				font-size: 1.05em;
 			}
+
+			&-button {
+				cursor: pointer;
+				padding: 0.5rem;
+			}
+
+			input {
+				display: none;
+			}
 		}
 
 		&-main {

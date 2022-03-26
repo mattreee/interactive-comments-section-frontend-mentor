@@ -1,6 +1,5 @@
-import IconPlus from "../images/icon-plus.svg";
-import IconMinus from "../images/icon-minus.svg";
 import DeleteModal from "./DeleteModal";
+import Score from "./Score";
 import { useState } from "react";
 
 const Reply = ({
@@ -38,15 +37,8 @@ const Reply = ({
 
 	return (
 		<div className="reply">
-			<div className="comments__comment-score">
-				<img className="comments__comment-score-button" src={IconPlus} alt="" />
-				<p className="comments__comment-score-value">{score}</p>
-				<img
-					className="comments__comment-score-button"
-					src={IconMinus}
-					alt=""
-				/>
-			</div>
+			<Score score={score} parentId={parentId} commentId={id} />
+
 			<div className="comments__comment-main">
 				<div className="comments__comment-header">
 					<img
