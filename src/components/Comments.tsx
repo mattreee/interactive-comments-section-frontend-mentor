@@ -13,13 +13,13 @@ const Comments = () => {
 	const [comments, setComments] = useState([]);
 
 	const getAllComments = () => {
-		fetch("http://localhost:3333/comments")
+		fetch("https://mattreee-comment-api.herokuapp.com/comments")
 			.then((res) => res.json())
 			.then((data) => setComments(data));
 	};
 
 	const getCurrentUser = () => {
-		fetch("http://localhost:3333/currentuser")
+		fetch("https://mattreee-comment-api.herokuapp.com/currentuser")
 			.then((res) => res.json())
 			.then((data) => setCurrentUser(data));
 	};

@@ -28,11 +28,14 @@ const Reply = ({
 	};
 
 	const handleSubmit = () => {
-		fetch(`http://localhost:3333/updatereply/${parentId}/${id}`, {
-			method: "put",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(updateContent),
-		});
+		fetch(
+			`https://mattreee-comment-api.herokuapp.com/updatereply/${parentId}/${id}`,
+			{
+				method: "put",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(updateContent),
+			}
+		);
 	};
 
 	return (

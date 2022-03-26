@@ -1,6 +1,4 @@
 import { useState } from "react";
-// import IconPlus from "../images/icon-plus.svg";
-// import IconMinus from "../images/icon-minus.svg";
 import Score from "./Score";
 import DeleteModal from "./DeleteModal";
 import Reply from "./Reply";
@@ -38,15 +36,15 @@ const Comment = ({
 	};
 
 	const handleSubmit = () => {
-		fetch(`http://localhost:3333/updatecomment/${commentId}`, {
-			method: "put",
-			headers: { "Content-Type": "application/json" },
-			body: JSON.stringify(updateContent),
-		});
+		fetch(
+			`https://mattreee-comment-api.herokuapp.com/updatecomment/${commentId}`,
+			{
+				method: "put",
+				headers: { "Content-Type": "application/json" },
+				body: JSON.stringify(updateContent),
+			}
+		);
 	};
-	// make the handlesubmit for the plus and minus buttons;
-	// until now its only in the plus button right below
-	// make the same for the replies
 
 	return (
 		<div className="comments__container">

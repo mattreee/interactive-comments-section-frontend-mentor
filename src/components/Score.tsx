@@ -14,14 +14,17 @@ const Score = ({ score, parentId, commentId }: any) => {
 
 	const handleScorePlus = () => {
 		if (parentId !== undefined) {
-			fetch(`http://localhost:3333/scorereply/${parentId}/${commentId}`, {
-				method: "put",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(scoreState.plus),
-			});
+			fetch(
+				`https://mattreee-comment-api.herokuapp.com/scorereply/${parentId}/${commentId}`,
+				{
+					method: "put",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(scoreState.plus),
+				}
+			);
 		}
 
-		fetch(`http://localhost:3333/score/${commentId}`, {
+		fetch(`https://mattreee-comment-api.herokuapp.com/score/${commentId}`, {
 			method: "put",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(scoreState.plus),
@@ -30,14 +33,17 @@ const Score = ({ score, parentId, commentId }: any) => {
 
 	const handleScoreMinus = () => {
 		if (parentId !== undefined) {
-			fetch(`http://localhost:3333/scorereply/${parentId}/${commentId}`, {
-				method: "put",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(scoreState.minus),
-			});
+			fetch(
+				`https://mattreee-comment-api.herokuapp.com/scorereply/${parentId}/${commentId}`,
+				{
+					method: "put",
+					headers: { "Content-Type": "application/json" },
+					body: JSON.stringify(scoreState.minus),
+				}
+			);
 		}
 
-		fetch(`http://localhost:3333/score/${commentId}`, {
+		fetch(`https://mattreee-comment-api.herokuapp.com/score/${commentId}`, {
 			method: "put",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(scoreState.minus),

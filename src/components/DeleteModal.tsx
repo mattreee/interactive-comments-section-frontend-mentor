@@ -12,13 +12,16 @@ const DeleteModal = ({
 
 	const handleSubmit = () => {
 		if (parentId !== undefined) {
-			fetch(`http://localhost:3333/deletereply/${parentId}/${commentId}`, {
-				method: "delete",
-			});
+			fetch(
+				`https://mattreee-comment-api.herokuapp.com/deletereply/${parentId}/${commentId}`,
+				{
+					method: "delete",
+				}
+			);
 			return;
 		}
 
-		fetch(`http://localhost:3333/delete/${commentId}`, {
+		fetch(`https://mattreee-comment-api.herokuapp.com/delete/${commentId}`, {
 			method: "delete",
 		});
 	};

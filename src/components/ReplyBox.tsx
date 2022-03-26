@@ -3,14 +3,12 @@ import { useState } from "react";
 const ReplyBox = ({ currentUser, parentId }: any) => {
 	const [textInput, setTextInput] = useState("");
 
-	const handleSubmit = (event: any) => {
-		// event.preventDefault();
-
+	const handleSubmit = () => {
 		const content = {
 			content: textInput,
 		};
 
-		fetch(`http://localhost:3333/newreply/${parentId}`, {
+		fetch(`https://mattreee-comment-api.herokuapp.com/newreply/${parentId}`, {
 			method: "POST",
 			headers: { "Content-Type": "application/json" },
 			body: JSON.stringify(content),
