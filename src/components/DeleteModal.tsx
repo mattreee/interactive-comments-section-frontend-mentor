@@ -13,7 +13,7 @@ const DeleteModal = ({
 	const handleSubmit = () => {
 		if (parentId !== undefined) {
 			fetch(
-				`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/deletereply/${parentId}/${commentId}`,
+				`https://mattreee-comment-api.herokuapp.com/deletereply/${parentId}/${commentId}`,
 				{
 					method: "delete",
 				}
@@ -21,12 +21,9 @@ const DeleteModal = ({
 			return;
 		}
 
-		fetch(
-			`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/delete/${commentId}`,
-			{
-				method: "delete",
-			}
-		);
+		fetch(`https://mattreee-comment-api.herokuapp.com/delete/${commentId}`, {
+			method: "delete",
+		});
 	};
 
 	function clickOutsideContainer(e: any) {

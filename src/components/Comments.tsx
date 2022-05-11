@@ -13,17 +13,13 @@ const Comments = () => {
 	const [comments, setComments] = useState([]);
 
 	const getAllComments = () => {
-		fetch(
-			"https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/comments"
-		)
+		fetch("https://mattreee-comment-api.herokuapp.com/comments")
 			.then((res) => res.json())
 			.then((data) => setComments(data));
 	};
 
 	const getCurrentUser = () => {
-		fetch(
-			"https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/currentuser"
-		)
+		fetch("https://mattreee-comment-api.herokuapp.com/currentuser")
 			.then((res) => res.json())
 			.then((data) => setCurrentUser(data));
 	};

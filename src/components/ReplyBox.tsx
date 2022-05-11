@@ -8,14 +8,11 @@ const ReplyBox = ({ currentUser, parentId }: any) => {
 			content: textInput,
 		};
 
-		fetch(
-			`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/newreply/${parentId}`,
-			{
-				method: "POST",
-				headers: { "Content-Type": "application/json" },
-				body: JSON.stringify(content),
-			}
-		);
+		fetch(`https://mattreee-comment-api.herokuapp.com/newreply/${parentId}`, {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify(content),
+		});
 	};
 
 	return (

@@ -29,7 +29,7 @@ const Reply = ({
 
 	const handleSubmit = () => {
 		fetch(
-			`https://radiant-garden-74448.herokuapp.com/https://mattreee-comment-api.herokuapp.com/updatereply/${parentId}/${id}`,
+			`https://mattreee-comment-api.herokuapp.com/updatereply/${parentId}/${id}`,
 			{
 				method: "put",
 				headers: { "Content-Type": "application/json" },
